@@ -228,14 +228,3 @@ frontend/
       ExperimentPanel.jsx           # static-desk vs. Spinup equity-curve comparison
 ```
 
-## Suggested next session with Claude
-
-Good next steps to tackle one at a time:
-1. "I ran the live options-chain wiring against my real Alpaca account and
-   here's what broke / here's a sample response — fix `_parse_chain_symbols`
-   to match."
-2. "Replace the IV-percentile approximation with a real historical rank —
-   I'll store daily IV snapshots for each ticker we trade."
-3. "Add a Sortino ratio and profit-factor to the Talent scoring formula
-   alongside the existing ROI/win-rate/drawdown weights."
-4. "Swap the dashboard's polling for a WebSocket push for the live demo."
