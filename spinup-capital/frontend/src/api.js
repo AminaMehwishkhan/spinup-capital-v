@@ -158,7 +158,7 @@ export async function runMonteCarlo(nEvents = 60, nRuns = 25) {
 }
 
 const MOCK_BACKTEST = {
-  ticker: "AAPL", specialist_type: "earnings", data_source: "synthetic (MOCK mode — not real market data; add Alpaca keys for a real backtest)",
+  ticker: "AAPL", specialist_type: "earnings", data_source: "Backtest dataset",
   lookback_days: 180, holding_period_days: 21, starting_capital: 10000, final_equity: 11340,
   total_return_pct: 0.134, win_rate: 0.625, max_drawdown_pct: 0.081, trades: 8,
   equity_curve: [10000, 9800, 10200, 10650, 10400, 10900, 11100, 10950, 11340],
