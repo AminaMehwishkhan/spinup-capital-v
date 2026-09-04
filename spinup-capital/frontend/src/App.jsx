@@ -31,7 +31,6 @@ export default function App() {
   const [permMatrix, setPermMatrix] = useState(null);
   const [retirements, setRetirements] = useState([]);
   const [running, setRunning] = useState(false);
-  const [offlineNote, setOfflineNote] = useState(false);
   const inFlight = useRef(false);
 
   const loadAll = useCallback(async () => {
@@ -65,13 +64,12 @@ export default function App() {
     return () => clearInterval(id);
   }, [running, loadAll]);
 
-  const handleRun = async () => {
-    setRunning(true);
-    const result = await runDemo(4);
-    if (result.status === "offline") setOfflineNote(true);
-    await loadAll();
-    setRunning(false);
-  };
+ const handleRun = async () => {
+  setRunning(true);
+  await runDemo(4);
+  await loadAll();
+  setRunning(false);
+};
 
   if (!summary) return null;
 
@@ -80,12 +78,7 @@ export default function App() {
       <TopNav active={activeTab} onChange={setActiveTab} onRun={handleRun} running={running} />
 
       <div className="shell">
-        {offlineNote && (
-          <div className="offline-banner">
-            Backend not reachable at localhost:8000 — showing static demo data. Start it with{" "}
-            <code>uvicorn backend.main:app --reload</code>.
-          </div>
-        )}
+       
 
         {activeTab === "overview" && (
           <>
