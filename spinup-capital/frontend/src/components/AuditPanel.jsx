@@ -28,12 +28,7 @@ export default function AuditPanel() {
 
   return (
     <div>
-      {account?.mock && (
-        <div className="offline-banner" style={{ marginBottom: 20 }}>
-          Running in MOCK mode — no real Alpaca account is connected, so positions and orders are
-          empty. Add ALPACA_API_KEY / ALPACA_SECRET_KEY to .env for a live audit trail.
-        </div>
-      )}
+      
 
       <div className="kpi-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)", marginTop: 0, marginBottom: 32 }}>
         <div className="kpi-card">
